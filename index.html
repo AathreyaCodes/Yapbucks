@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapbucks - Sip the SASS, Spill the TEA</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['Inter', 'Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        'yapbucks': {
+                            'beige': '#F5F0E8',
+                            'cream': '#FFF8E7',
+                            'brown': '#8B7355',
+                            'dark': '#2C1810',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-yapbucks-cream">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="font-serif text-2xl font-bold text-yapbucks-dark">Yapbucks</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="font-sans text-yapbucks-dark hover:text-yapbucks-brown transition-colors">Home</a>
+                        <a href="full-menu.html" class="font-sans text-yapbucks-dark hover:text-yapbucks-brown transition-colors">Menu</a>
+                        <a href="#about" class="font-sans text-yapbucks-dark hover:text-yapbucks-brown transition-colors">About</a>
+                        <a href="careers.html" class="font-sans text-yapbucks-dark hover:text-yapbucks-brown transition-colors">Join Us</a>
+                        <a href="#contact" class="font-sans bg-yapbucks-brown text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all shadow-sm">Order Now</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-yapbucks-dark hover:text-yapbucks-brown focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-3 py-2 font-sans text-yapbucks-dark hover:bg-yapbucks-beige rounded-md">Home</a>
+                <a href="full-menu.html" class="block px-3 py-2 font-sans text-yapbucks-dark hover:bg-yapbucks-beige rounded-md">Menu</a>
+                <a href="#about" class="block px-3 py-2 font-sans text-yapbucks-dark hover:bg-yapbucks-beige rounded-md">About</a>
+                <a href="careers.html" class="block px-3 py-2 font-sans text-yapbucks-dark hover:bg-yapbucks-beige rounded-md">Join Us</a>
+                <a href="#contact" class="block px-3 py-2 font-sans text-yapbucks-brown bg-yapbucks-beige hover:bg-opacity-80 rounded-md">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-16 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-yapbucks-dark mb-6 leading-tight">Yapbucks</h1>
+            <div class="space-y-4 mb-10">
+                <p class="font-sans text-xl sm:text-2xl text-yapbucks-brown">Sip the SASS 😎, Spill the TEA ☕️</p>
+                <p class="font-sans text-xl sm:text-2xl text-yapbucks-brown">Stay broke but yap for FREE 🫡</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu" class="inline-block bg-yapbucks-brown text-white px-8 py-3 rounded-lg text-lg hover:bg-opacity-90 transition-all shadow-md">View Menu</a>
+                <a href="careers.html" class="inline-block border-2 border-yapbucks-brown text-yapbucks-brown px-8 py-3 rounded-lg text-lg hover:bg-yapbucks-brown hover:text-white transition-all">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="py-16 bg-yapbucks-beige">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-serif text-3xl text-center mb-12 text-yapbucks-dark">What Makes Us Special</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition-transform hover:-translate-y-1">
+                    <span class="text-4xl mb-4 block">🌱</span>
+                    <h3 class="font-serif text-xl mb-2">Sustainable Sips</h3>
+                    <p class="font-sans text-yapbucks-brown">Eco-friendly cups, locally sourced beans, and a whole lot of love for Mother Earth.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition-transform hover:-translate-y-1">
+                    <span class="text-4xl mb-4 block">💭</span>
+                    <h3 class="font-serif text-xl mb-2">Community Vibes</h3>
+                    <p class="font-sans text-yapbucks-brown">A space where conversations flow as smoothly as our coffee.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition-transform hover:-translate-y-1">
+                    <span class="text-4xl mb-4 block">✨</span>
+                    <h3 class="font-serif text-xl mb-2">Aesthetic Goals</h3>
+                    <p class="font-sans text-yapbucks-brown">Every corner is Instagram-ready. Your feed will thank us later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-serif text-3xl sm:text-4xl text-center mb-6 text-yapbucks-dark">The Yap Menu™</h2>
+            <p class="font-sans text-center text-yapbucks-brown mb-12 max-w-2xl mx-auto">A glimpse of our most popular items. There's so much more to discover!</p>
+            <!-- Menu categories will be populated by JavaScript -->
+            <div id="menu-categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+            <div class="text-center mt-12">
+                <a href="full-menu.html" class="inline-block bg-yapbucks-brown text-white px-8 py-3 rounded-lg text-lg hover:bg-opacity-90 transition-all shadow-md relative overflow-hidden group">
+                    <span class="relative z-10">View Full Menu</span>
+                    <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-yapbucks-beige">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h2 class="font-serif text-3xl sm:text-4xl mb-6">Our Story</h2>
+                    <p class="font-sans text-lg text-yapbucks-brown mb-4">Welcome to Yapbucks, where coffee meets conversation and puns are always brewing! We're not your average café - we're a vibe, a mood, and definitely a whole lot of yap.</p>
+                    <p class="font-sans text-lg text-yapbucks-brown mb-6">Founded on the belief that great coffee should come with even better conversation, we've created a space where Gen-Z and millennials can come together, sip on some quality brews, and spill the tea (literally and figuratively).</p>
+                    <a href="#menu" class="inline-block font-sans text-yapbucks-brown hover:text-yapbucks-dark font-medium">Check out our menu →</a>
+                </div>
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h3 class="font-serif text-xl sm:text-2xl mb-4">Why Choose Yapbucks?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3 flex-shrink-0">🌟</span>
+                            <span class="font-sans text-yapbucks-brown">Insta-worthy aesthetics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3 flex-shrink-0">☕️</span>
+                            <span class="font-sans text-yapbucks-brown">Quality brews & snacks</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3 flex-shrink-0">🌱</span>
+                            <span class="font-sans text-yapbucks-brown">Sustainable practices</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3 flex-shrink-0">💖</span>
+                            <span class="font-sans text-yapbucks-brown">Inclusive vibes only</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3 flex-shrink-0">🎵</span>
+                            <span class="font-sans text-yapbucks-brown">Fresh beats and good energy</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-serif text-3xl sm:text-4xl text-center mb-6 text-yapbucks-dark">Connect With Us</h2>
+            <p class="font-sans text-center text-yapbucks-brown mb-12 max-w-2xl mx-auto">Got questions? Want to book a space? Just want to say hi? We're all ears!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-yapbucks-cream p-6 sm:p-8 rounded-lg shadow-md">
+                    <h3 class="font-serif text-xl sm:text-2xl mb-4">Drop Us a Line</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block font-sans text-yapbucks-dark mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded-lg border border-yapbucks-beige focus:outline-none focus:ring-2 focus:ring-yapbucks-brown">
+                        </div>
+                        <div>
+                            <label for="email" class="block font-sans text-yapbucks-dark mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded-lg border border-yapbucks-beige focus:outline-none focus:ring-2 focus:ring-yapbucks-brown">
+                        </div>
+                        <div>
+                            <label for="message" class="block font-sans text-yapbucks-dark mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-yapbucks-beige focus:outline-none focus:ring-2 focus:ring-yapbucks-brown"></textarea>
+                        </div>
+                        <button type="button" class="bg-yapbucks-brown text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all shadow-sm">Send Message</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <h3 class="font-serif text-xl sm:text-2xl mb-4">Visit Our Flagship Store</h3>
+                    <div class="aspect-video bg-yapbucks-beige rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-4xl">🗺️</span>
+                    </div>
+                    <p class="font-sans text-yapbucks-brown mb-4">123 Yap Street, Gossip District<br>Tea Town, SP1LL 7EA</p>
+                    <div class="space-y-2">
+                        <p class="font-sans text-yapbucks-brown"><span class="font-medium">Hours:</span> Mon-Fri 7am-8pm, Sat-Sun 8am-9pm</p>
+                        <p class="font-sans text-yapbucks-brown"><span class="font-medium">Phone:</span> (555) YAP-BUCK</p>
+                        <p class="font-sans text-yapbucks-brown"><span class="font-medium">Email:</span> hello@yapbucks.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yapbucks-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-serif text-xl mb-4">Yapbucks</h3>
+                    <p class="font-sans text-sm opacity-80">Where every sip tells a story, and every bite sparks conversation.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-white opacity-80 hover:opacity-100 transition-opacity">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white opacity-80 hover:opacity-100 transition-opacity">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white opacity-80 hover:opacity-100 transition-opacity">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#home" class="block font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Home</a>
+                        <a href="full-menu.html" class="block font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Menu</a>
+                        <a href="#about" class="block font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">About</a>
+                        <a href="careers.html" class="block font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Careers</a>
+                        <a href="#contact" class="block font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl mb-4">Visit Us</h3>
+                    <p class="font-sans text-sm opacity-80">123 Yap Street<br>Gossip District<br>Tea Town, SP1LL 7EA</p>
+                    <p class="font-sans text-sm opacity-80 mt-2">© 2025 Yapbucks. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Remove any duplicate mobile menu functionality from script.js
+            if (window.setupMobileMenu) {
+                // Prevent the old mobile menu setup from running
+                window.setupMobileMenu = function() {};
+            }
+        });
+    </script>
+</body>
+</html> 
