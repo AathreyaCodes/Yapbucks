@@ -30,6 +30,17 @@ html {
     transform: translateY(-4px);
 }
 
+/* Category filter buttons */
+.category-btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.category-btn.active {
+    background-color: #8B7355 !important;
+    color: white !important;
+    font-weight: 600;
+}
+
 /* Mobile menu button */
 .mobile-menu-button {
     display: none;
@@ -64,4 +75,388 @@ html {
 
 .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Dark Mode Styles */
+:root {
+    --transition-duration: 0.3s;
+}
+
+/* Dark mode toggle styles */
+#dark-mode-toggle {
+    transition: background-color var(--transition-duration) ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-circle {
+    transition: transform var(--transition-duration) ease, background-color var(--transition-duration) ease;
+}
+
+/* Theme transition */
+.theme-transition * {
+    transition: background-color var(--transition-duration) ease,
+                color var(--transition-duration) ease,
+                border-color var(--transition-duration) ease,
+                box-shadow var(--transition-duration) ease !important;
+}
+
+/* Dark mode theme */
+.dark-mode {
+    /* Scrollbar */
+    --scrollbar-track: #1a1a1a;
+    --scrollbar-thumb: #8B7355;
+    --scrollbar-thumb-hover: #a08566;
+    
+    /* Colors */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2d2d2d;
+    --text-primary: #f5f5f5;
+    --text-secondary: #e0e0e0;
+    --text-muted: #c0c0c0;
+    --border-color: #333333;
+    --accent-color: #c0a080;
+    --accent-hover: #d4b694;
+    --card-bg: #262626;
+    --item-bg: #202020;
+    --light-card: #383838;
+}
+
+/* Apply dark mode styles */
+.dark-mode body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Navigation */
+.dark-mode nav {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode nav a {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode nav a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Mobile Menu */
+.dark-mode #mobile-menu {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode #mobile-menu a {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode #mobile-menu a:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-color) !important;
+}
+
+.dark-mode #mobile-menu a.bg-yapbucks-beige {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-color) !important;
+}
+
+/* Menu Categories */
+.dark-mode .category-btn {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .category-btn:hover {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode .category-btn.active {
+    background-color: var(--accent-color);
+    color: #121212 !important;
+    font-weight: 600;
+    border-color: var(--accent-hover);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu filter buttons in full-menu.html */
+.dark-mode button[data-category] {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode button[data-category]:hover {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode button[data-category].active {
+    background-color: var(--accent-color);
+    color: #121212 !important;
+    font-weight: 600;
+    border-color: var(--accent-hover);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Price tags */
+.dark-mode .menu-item-price,
+.dark-mode span.bg-yapbucks-beige {
+    background-color: var(--card-bg) !important;
+    color: var(--accent-color) !important;
+    border: 1px solid var(--border-color);
+}
+
+/* Sections */
+.dark-mode section {
+    background-color: var(--bg-primary);
+}
+
+.dark-mode section.bg-yapbucks-beige {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode section.bg-white {
+    background-color: var(--bg-tertiary);
+}
+
+/* Cards and containers */
+.dark-mode .bg-white {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode .bg-yapbucks-cream {
+    background-color: var(--bg-tertiary);
+}
+
+.dark-mode .menu-item {
+    border-color: var(--border-color);
+}
+
+/* Text colors */
+.dark-mode .text-yapbucks-dark {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode .text-yapbucks-brown {
+    color: var(--accent-color) !important;
+}
+
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode h4 {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode p {
+    color: var(--text-secondary) !important;
+}
+
+/* Form elements */
+.dark-mode input, 
+.dark-mode textarea,
+.dark-mode select,
+.dark-mode input[type="file"] {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.dark-mode input:focus, 
+.dark-mode textarea:focus,
+.dark-mode select:focus {
+    border-color: var(--accent-color);
+}
+
+.dark-mode label {
+    color: var(--text-primary);
+}
+
+/* Buttons */
+.dark-mode .bg-yapbucks-brown {
+    background-color: var(--accent-color);
+}
+
+.dark-mode .bg-yapbucks-brown:hover {
+    background-color: var(--accent-hover);
+}
+
+.dark-mode .border-yapbucks-brown {
+    border-color: var(--accent-color);
+}
+
+.dark-mode .hover\:bg-yapbucks-brown:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer */
+.dark-mode footer {
+    background-color: #0a0a0a;
+}
+
+.dark-mode footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Menu items in dark mode */
+.dark-mode .menu-category {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .menu-category button {
+    background-color: var(--bg-tertiary);
+}
+
+.dark-mode .menu-category button:hover {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode .menu-item {
+    background-color: var(--bg-tertiary);
+}
+
+.dark-mode .menu-item:hover {
+    background-color: var(--bg-secondary);
+}
+
+.dark-mode .menu-item h3 {
+    color: var(--text-primary);
+}
+
+.dark-mode .menu-item p {
+    color: var(--text-secondary);
+}
+
+/* Sticky menu categories */
+.dark-mode .sticky.bg-yapbucks-cream {
+    background-color: var(--bg-secondary);
+}
+
+/* Careers page specific styles */
+.dark-mode .p-4.bg-yapbucks-beige {
+    background-color: var(--card-bg) !important;
+}
+
+.dark-mode .flex.items-center span.text-yapbucks-brown {
+    color: var(--text-muted) !important;
+}
+
+.dark-mode .flex.items-center span.text-2xl {
+    color: var(--accent-color) !important;
+}
+
+.dark-mode .space-y-4 h4 {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode .space-y-4 p {
+    color: var(--text-muted) !important;
+}
+
+/* Job positions on careers page */
+.dark-mode .transition-transform.hover\:-translate-y-1 {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .transition-transform.hover\:-translate-y-1 p {
+    color: var(--text-muted) !important;
+}
+
+.dark-mode .transition-transform.hover\:-translate-y-1 a {
+    color: var(--accent-color) !important;
+}
+
+.dark-mode .transition-transform.hover\:-translate-y-1 h3 {
+    color: var(--text-primary) !important;
+}
+
+/* Map and store location section */
+.dark-mode .aspect-video.bg-yapbucks-beige {
+    background-color: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .aspect-video span {
+    filter: brightness(0.85) hue-rotate(10deg);
+}
+
+/* Menu page sections */
+.dark-mode #full-menu .collapsible-header {
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode #full-menu h2,
+.dark-mode #full-menu h3 {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode #full-menu .collapsible-content {
+    background-color: var(--bg-tertiary) !important;
+}
+
+.dark-mode #full-menu .menu-item-container {
+    background-color: var(--item-bg) !important;
+    border: 1px solid var(--border-color);
+    margin-bottom: 4px;
+}
+
+.dark-mode #full-menu .menu-item-container:hover {
+    background-color: var(--card-bg) !important;
+}
+
+.dark-mode #full-menu .menu-item-description {
+    color: var(--text-muted) !important;
+}
+
+/* Hot drinks section header */
+.dark-mode #full-menu .category-header {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dark-mode #full-menu .category-header h2 {
+    color: var(--text-primary) !important;
+}
+
+/* Fix for any span elements with text */
+.dark-mode span.font-medium {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode span.font-sans.text-yapbucks-brown {
+    color: var(--text-muted) !important;
+}
+
+/* Address and contact information */
+.dark-mode div p.font-sans.text-yapbucks-brown {
+    color: var(--text-muted) !important;
+}
+
+/* Special handling for ordered and unordered lists */
+.dark-mode ul li, 
+.dark-mode ol li {
+    color: var(--text-muted) !important;
+}
+
+/* Add on hover styles to any links that might not be caught */
+.dark-mode a:hover:not(.bg-yapbucks-brown):not(.border-yapbucks-brown):not(.font-medium) {
+    color: var(--accent-color) !important;
 } 

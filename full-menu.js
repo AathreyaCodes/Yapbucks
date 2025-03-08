@@ -84,16 +84,16 @@ function createFullMenu() {
         section.setAttribute('data-category', category);
         
         const header = document.createElement('button');
-        header.className = 'w-full px-6 py-4 flex justify-between items-center bg-yapbucks-beige hover:bg-opacity-80 transition-colors';
+        header.className = 'w-full px-6 py-4 flex justify-between items-center bg-yapbucks-beige hover:bg-opacity-80 transition-colors collapsible-header';
         header.innerHTML = `
-            <h2 class="font-serif text-2xl text-yapbucks-dark">${category} <span class="text-sm font-sans ml-2">(${items.length} items)</span></h2>
+            <h2 class="font-serif text-2xl text-yapbucks-dark category-title">${category} <span class="text-sm font-sans ml-2">(${items.length} items)</span></h2>
             <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
         `;
 
         const content = document.createElement('div');
-        content.className = 'px-6 py-4 hidden';
+        content.className = 'px-6 py-4 hidden collapsible-content';
         
         // Create grid for menu items
         const itemsGrid = document.createElement('div');
@@ -102,13 +102,13 @@ function createFullMenu() {
         // Add items to grid
         items.forEach(item => {
             const itemCard = document.createElement('div');
-            itemCard.className = 'p-4 border-b border-yapbucks-beige last:border-0 menu-item hover:bg-yapbucks-cream rounded-lg transition-colors';
+            itemCard.className = 'p-4 border-b border-yapbucks-beige last:border-0 menu-item hover:bg-yapbucks-cream rounded-lg transition-colors menu-item-container';
             itemCard.innerHTML = `
                 <div class="flex justify-between items-start">
-                    <h3 class="font-serif text-lg text-yapbucks-dark">${item.name}</h3>
-                    <span class="font-sans font-medium text-yapbucks-dark bg-yapbucks-beige px-2 py-1 rounded-full text-sm">${item.price}</span>
+                    <h3 class="font-serif text-lg text-yapbucks-dark menu-item-title">${item.name}</h3>
+                    <span class="font-sans font-medium text-yapbucks-dark bg-yapbucks-beige px-2 py-1 rounded-full text-sm menu-item-price">${item.price}</span>
                 </div>
-                <p class="font-sans text-yapbucks-brown text-sm mt-1">${item.description || ''}</p>
+                <p class="font-sans text-yapbucks-brown text-sm mt-1 menu-item-description">${item.description || ''}</p>
             `;
             itemsGrid.appendChild(itemCard);
         });
@@ -155,10 +155,13 @@ function setupCategoryFilters() {
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
-            categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-yapbucks-brown', 'text-white'));
+            categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-yapbucks-brown'));
             
             // Add active class to clicked button
-            button.classList.add('active', 'bg-yapbucks-brown', 'text-white');
+            button.classList.add('active', 'bg-yapbucks-brown');
+            
+            // Check if dark mode is active
+            const isDarkMode = document.documentElement.classList.contains('dark-mode');
             
             const selectedCategory = button.getAttribute('data-category');
             
